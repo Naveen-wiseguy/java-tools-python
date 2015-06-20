@@ -14,16 +14,16 @@ for arg in sys.argv[2:]:
  splits=arg.split(':',1)
  type=splits[1]
  name=splits[0]
- fo.write("\t"+type+ " "+name+";\n")
+ fo.write("\tprivate"+type+ " "+name+";\n")
  
 for arg in sys.argv[2:]:
  splits=arg.split(':',1)
  type=splits[1]
  name=splits[0]
- fo.write("\t"+type+" get"+name.capitalize()+"(){\n")
+ fo.write("\tpublic"+type+" get"+name.capitalize()+"(){\n")
  fo.write("\t\treturn "+name+";\n")
  fo.write("\t}\n")
- fo.write("\tvoid set"+name.capitalize()+"("+type+" "+name+"){\n")
+ fo.write("\tpublic void set"+name.capitalize()+"("+type+" "+name+"){\n")
  fo.write("\t\tthis."+name+"="+name+";\n")
  fo.write("\t}\n")
  
